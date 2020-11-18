@@ -37,9 +37,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
