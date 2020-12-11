@@ -22,8 +22,8 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # alias
 alias ll='ls -la'
-alias subl='open -a "Sublime Text"'
-alias code='open -a "VSCodium"'
+alias nova='open -a Nova'
+alias code='open -a VSCodium'
 
 # locale
 export LANG=en_GB.UTF-8
