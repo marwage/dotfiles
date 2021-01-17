@@ -51,15 +51,6 @@ let g:NERDDefaultAlign = 'left'
 " nerdtree
 map <Leader>n :NERDTreeToggle<CR>
 
-" automatic closing brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
 " ALE
 let g:ale_linters = {'cpp': ['clang-format']}
 let g:ale_fixers = {'cpp': ['clang-format']}
