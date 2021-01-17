@@ -40,6 +40,8 @@ Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
 Plug 'itchyny/lightline.vim'
+Plug 'yggdroot/indentline'
+Plug 'raimondi/delimitmate'
 
 call plug#end()
 
@@ -52,7 +54,6 @@ let g:NERDDefaultAlign = 'left'
 map <Leader>n :NERDTreeToggle<CR>
 
 " ALE
-let g:ale_linters = {'cpp': ['clang-format']}
-let g:ale_fixers = {'cpp': ['clang-format']}
+let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
 
