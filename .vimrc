@@ -1,3 +1,18 @@
+" Marcel's vimrc
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'dense-analysis/ale'
+Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
+Plug 'yggdroot/indentline'
+Plug 'raimondi/delimitmate'
+Plug 'sainnhe/sonokai'
+
+call plug#end()
 set number
 " set linebreak
 set showbreak=+++
@@ -33,19 +48,6 @@ colorscheme sonokai
 " lightline
 set laststatus=2
 set noshowmode
-
-" vim-plug
-call plug#begin('~/.vim/plugged')
-
-Plug 'preservim/nerdcommenter'
-Plug 'preservim/nerdtree'
-Plug 'dense-analysis/ale'
-Plug 'ervandew/supertab'
-Plug 'itchyny/lightline.vim'
-Plug 'yggdroot/indentline'
-Plug 'raimondi/delimitmate'
-
-call plug#end()
 
 " nerdcommenter
 filetype plugin on
