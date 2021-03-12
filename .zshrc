@@ -25,6 +25,9 @@ alias ll='ls -la'
 alias nova='open -a Nova'
 alias code='open -a VSCodium'
 
-# locale
-export LANG=en_GB.UTF-8
+# locale (need for mosh)
+export LANG=en_GB.UTF-8 LC_CTYPE=en_GB.UTF-8
+
+# path
+export PATH=/usr/local/sbin:$PATH
 
