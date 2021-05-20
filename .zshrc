@@ -21,9 +21,17 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # alias
-alias ll='ls -la'
-alias nova='open -a Nova'
-alias code='open -a VSCodium'
+case `uname` in
+    Darwin)
+        alias ll='ls -la'
+        alias nova='open -a Nova'
+        alias code='open -a VSCodium'
+    ;;
+    Linux)
+        alias ll='ls -la --color'
+        alias ls='ls --color'
+    ;;
+esac
 
 # locale (need for mosh)
 export LANG=en_GB.UTF-8 LC_CTYPE=en_GB.UTF-8
@@ -31,3 +39,5 @@ export LANG=en_GB.UTF-8 LC_CTYPE=en_GB.UTF-8
 # path
 export PATH=/usr/local/sbin:$PATH
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
