@@ -38,6 +38,7 @@ export LANG=en_GB.UTF-8 LC_CTYPE=en_GB.UTF-8
 
 # path
 export PATH=/usr/local/sbin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
