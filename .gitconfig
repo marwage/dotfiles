@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+    name = Marcel Wagenländer
+    email = marcel.wagenlander19@imperial.ac.uk
+[core]
+    precomposeUnicode = true
+    editor = vim
