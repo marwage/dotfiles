@@ -18,18 +18,18 @@ set number
 set showbreak=+++
 set textwidth=100
 set showmatch
- 
+
 set hlsearch
 set ignorecase
 set incsearch
- 
+
 set autoindent
 set expandtab
 set shiftwidth=4
 set smartindent
 set smarttab
 set softtabstop=4
- 
+
 set ruler
 
 set backspace=indent,eol,start
@@ -58,6 +58,9 @@ let g:NERDDefaultAlign = 'left'
 map <Leader>n :NERDTreeToggle<CR>
 
 " ALE
+let g:ale_fixers = {
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\ 'python': ['isort', 'yapf'],
+\}
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
-
