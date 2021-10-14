@@ -42,3 +42,9 @@ export PATH=/opt/homebrew/bin:$PATH
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# prompt
+PS1='%n@%m %2d$ '
+
+# add ssh key
+ssh-add -K
