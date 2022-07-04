@@ -62,6 +62,7 @@ let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'python': ['autoflake', 'isort', 'yapf'],
 \ 'go': ['gofmt'],
+\ 'cpp': ['clang-format'],
 \}
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
