@@ -29,6 +29,7 @@ set shiftwidth=4
 set smartindent
 set smarttab
 set softtabstop=4
+set clipboard=unnamed
 
 set ruler
 
@@ -62,6 +63,7 @@ let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'python': ['autoflake', 'isort', 'yapf'],
 \ 'go': ['gofmt'],
+\ 'json': ['jq'],
 \}
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
