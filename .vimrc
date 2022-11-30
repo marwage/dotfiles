@@ -65,7 +65,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'python': ['autoflake', 'isort', 'yapf'],
-\ 'go': ['gofmt'],
+\ 'go': ['gofmt', 'goimports', 'golines'],
 \ 'json': ['jq'],
 \ 'cpp': ['clang-format'],
 \}
