@@ -59,6 +59,9 @@ let g:NERDDefaultAlign = 'left'
 map <Leader>n :NERDTreeToggle<CR>
 
 " ALE
+let g:ale_linters = {
+\ 'go': ['gopls'],
+\}
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'python': ['autoflake', 'isort', 'yapf'],
