@@ -71,3 +71,8 @@ let g:ale_fixers = {
 \}
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
+
+" GO
+" autocmd Filetype go setlocal tabstop=8
+" autocmd Filetype go setlocal softtabstop=8
+autocmd Filetype go setlocal shiftwidth=8
