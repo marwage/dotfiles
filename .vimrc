@@ -61,10 +61,11 @@ map <Leader>n :NERDTreeToggle<CR>
 " ALE
 let g:ale_linters = {
 \ 'go': ['gopls'],
+\ 'python' :['flake8', 'mypy', 'pylint', 'pyright'],
 \}
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-\ 'python': ['autoflake', 'isort', 'yapf'],
+\ 'python': ['isort', 'yapf'],
 \ 'go': ['gofmt', 'goimports', 'golines'],
 \ 'json': ['jq'],
 \ 'cpp': ['clang-format'],
