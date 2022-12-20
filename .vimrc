@@ -29,6 +29,7 @@ set shiftwidth=4
 set smartindent
 set smarttab
 set softtabstop=4
+set clipboard=unnamed
 
 set ruler
 
@@ -58,9 +59,20 @@ let g:NERDDefaultAlign = 'left'
 map <Leader>n :NERDTreeToggle<CR>
 
 " ALE
+let g:ale_linters = {
+\ 'go': ['gopls'],
+\}
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-\ 'python': ['isort', 'yapf'],
+\ 'python': ['autoflake', 'isort', 'yapf'],
+\ 'go': ['gofmt', 'goimports', 'golines'],
+\ 'json': ['jq'],
+\ 'cpp': ['clang-format'],
 \}
 let g:ale_lint_on_insert_leave = 1
 let g:ale_fix_on_save = 1
+
+" GO
+" autocmd Filetype go setlocal tabstop=8
+" autocmd Filetype go setlocal softtabstop=8
+autocmd Filetype go setlocal shiftwidth=8
