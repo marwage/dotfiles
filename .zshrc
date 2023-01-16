@@ -36,9 +36,15 @@ esac
 # locale (need for mosh)
 export LANG=en_GB.UTF-8 LC_CTYPE=en_GB.UTF-8
 
-# path
-export PATH=/usr/local/sbin:$PATH
+# homebrew
 export PATH=/opt/homebrew/bin:$PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# prompt
+PS1='%n@%m %2d$ '
+
+# add ssh key
+ssh-add -K
