@@ -14,9 +14,9 @@ Plug 'sainnhe/sonokai'
 
 call plug#end()
 set number
-" set linebreak
+set linebreak
 set showbreak=+++
-set textwidth=100
+set textwidth=0
 set showmatch
 
 set hlsearch
