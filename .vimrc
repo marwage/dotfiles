@@ -69,12 +69,13 @@ let g:ale_fixers = {
 \ 'go': ['gofmt', 'goimports', 'golines'],
 \ 'cpp': ['clang-format'],
 \ 'json': ['jq'],
+\ 'yaml': ['yamlfix'],
 \}
 let g:ale_lint_on_insert_leave=1
 let g:ale_fix_on_save=1
 let g:ale_completion_enabled=1
 
 " GO
-" autocmd Filetype go setlocal tabstop=8
-" autocmd Filetype go setlocal softtabstop=8
 autocmd Filetype go setlocal shiftwidth=8
+" YAML
+autocmd Filetype yaml setlocal shiftwidth=2
