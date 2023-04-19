@@ -42,10 +42,6 @@ let g:lightline = {'colorscheme' : 'sonokai'}
 let g:sonokai_transparent_background = 1
 colorscheme sonokai
 
-" dracula
-" packadd! dracula
-" colorscheme dracula
-
 " lightline
 set laststatus=2
 set noshowmode
@@ -74,6 +70,9 @@ let g:ale_fixers = {
 let g:ale_lint_on_insert_leave=1
 let g:ale_fix_on_save=1
 let g:ale_completion_enabled=1
+
+" jq
+let g:ale_json_jq_options = '--indent 4'
 
 " GO
 autocmd Filetype go setlocal shiftwidth=8
