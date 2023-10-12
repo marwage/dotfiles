@@ -35,6 +35,8 @@ set ruler
 
 set backspace=indent,eol,start
 
+set viminfo='100,<1000,s100,h
+
 syntax enable
 
 " sonokai
@@ -61,7 +63,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-\ 'python': ['isort', 'yapf'],
+\ 'python': ['isort', 'black'],
 \ 'go': ['gofmt', 'goimports', 'golines'],
 \ 'cpp': ['clang-format'],
 \ 'json': ['jq'],
