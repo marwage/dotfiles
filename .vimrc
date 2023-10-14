@@ -30,6 +30,7 @@ set smartindent
 set smarttab
 set softtabstop=4
 set clipboard=unnamed
+set tw=0
 
 set ruler
 

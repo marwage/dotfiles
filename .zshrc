@@ -25,7 +25,7 @@ case `uname` in
     Darwin)
         alias ll='ls -la'
         alias nova='open -a Nova'
-        alias code='open -a VSCodium'
+        alias code='open -a Visual\ Studio\ Code'
     ;;
     Linux)
         alias ll='ls -la --color'
@@ -47,4 +47,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 PS1='%n@%m %2d$ '
 
 # add ssh key
-ssh-add -K
+ssh-add --apple-use-keychain
