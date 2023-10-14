@@ -14,9 +14,9 @@ Plug 'sainnhe/sonokai'
 
 call plug#end()
 set number
-" set linebreak
+set linebreak
 set showbreak=+++
-set textwidth=100
+set textwidth=0
 set showmatch
 
 set hlsearch
@@ -36,16 +36,14 @@ set ruler
 
 set backspace=indent,eol,start
 
+set viminfo='100,<1000,s100,h
+
 syntax enable
 
 " sonokai
 let g:lightline = {'colorscheme' : 'sonokai'}
 let g:sonokai_transparent_background = 1
 colorscheme sonokai
-
-" dracula
-" packadd! dracula
-" colorscheme dracula
 
 " lightline
 set laststatus=2
@@ -66,15 +64,20 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-\ 'python': ['isort', 'yapf'],
+\ 'python': ['isort', 'black'],
 \ 'go': ['gofmt', 'goimports', 'golines'],
-\ 'json': ['jq'],
 \ 'cpp': ['clang-format'],
+\ 'json': ['jq'],
+\ 'yaml': ['yamlfix'],
 \}
-let g:ale_lint_on_insert_leave = 1
-let g:ale_fix_on_save = 1
+let g:ale_lint_on_insert_leave=1
+let g:ale_fix_on_save=1
+let g:ale_completion_enabled=1
+
+" jq
+let g:ale_json_jq_options = '--indent 4'
 
 " GO
-" autocmd Filetype go setlocal tabstop=8
-" autocmd Filetype go setlocal softtabstop=8
 autocmd Filetype go setlocal shiftwidth=8
+" YAML
+autocmd Filetype yaml setlocal shiftwidth=2
