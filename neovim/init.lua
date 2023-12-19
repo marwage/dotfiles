@@ -1,3 +1,4 @@
+-- LAZY PACKAGE MANAGER
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -11,11 +12,16 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({"sainnhe/sonokai"})
+require("lazy").setup({
+    "sainnhe/sonokai",
+    "neovim/nvim-lspconfig"
+})
 
+-- COLOURSCHEME
 vim.cmd[[colorscheme sonokai]]
 vim.cmd[[hi Normal ctermbg=NONE]] -- black background with sonokai
 
+-- OPTIONS
 vim.o.number=true
 vim.o.linebreak=true
 vim.o.showbreak="+++"
@@ -25,3 +31,28 @@ vim.o.expandtab=true -- Use the appropriate number of spaces to insert a <Tab>
 vim.o.shiftwidth=4
 vim.o.smartindent=true
 vim.o.softtabstop=4 -- Number of spaces that a <Tab> counts for while performing editing
+
+-- LSP
+lspconfig = require("lspconfig")
+lspconfig.pylsp.setup {
+settings = {
+    pylsp = {
+    plugins = {
+        -- formatter options
+        black = { enabled = true },
+        autopep8 = { enabled = false },
+        yapf = { enabled = false },
+        -- linter options
+        pylint = { enabled = true, executable = "pylint" },
+        pyflakes = { enabled = false },
+        pycodestyle = { enabled = false },
+        -- type checker
+        pylsp_mypy = { enabled = true },
+        -- auto-completion options
+        jedi_completion = { fuzzy = true },
+        -- import sorting
+        pyls_isort = { enabled = true },
+    },
+    },
+},
+}
