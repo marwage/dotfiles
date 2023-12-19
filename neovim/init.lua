@@ -14,7 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     "sainnhe/sonokai",
-    "neovim/nvim-lspconfig"
+    "neovim/nvim-lspconfig",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp"
 })
 
 -- COLOURSCHEME
@@ -31,6 +33,11 @@ vim.o.expandtab=true -- Use the appropriate number of spaces to insert a <Tab>
 vim.o.shiftwidth=4
 vim.o.smartindent=true
 vim.o.softtabstop=4 -- Number of spaces that a <Tab> counts for while performing editing
+
+-- CMP
+require("cmp")
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- LSP
 lspconfig = require("lspconfig")
@@ -55,4 +62,7 @@ settings = {
     },
     },
 },
+capabilities = capabilities,
 }
+
+lspconfig.lua_ls.setup{}
