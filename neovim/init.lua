@@ -12,3 +12,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({"sainnhe/sonokai"})
+
+vim.cmd "colorscheme sonokai"
