@@ -14,4 +14,4 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({"sainnhe/sonokai"})
 
 vim.cmd "colorscheme sonokai"
-vim.cmd "hi Normal guibg=NONE ctermbg=NONE"
+vim.cmd "hi Normal ctermbg=NONE"
