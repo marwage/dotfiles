@@ -15,3 +15,12 @@ require("lazy").setup({"sainnhe/sonokai"})
 
 vim.cmd "colorscheme sonokai"
 vim.cmd "hi Normal ctermbg=NONE" -- black background with sonokai
+
+vim.o.number=true
+vim.o.linebreak=true
+vim.o.showbreak="+++"
+vim.o.showmatch=true -- When a bracket is inserted, briefly jump to the matching one
+vim.o.ignorecase=true -- Ignore case in search patterns
+vim.o.shiftwidth=4
+vim.o.smartindent=true
+vim.o.softtabstop=4 -- Number of spaces that a <Tab> counts for while performing editing
