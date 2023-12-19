@@ -26,19 +26,27 @@ case `uname` in
         alias ll='ls -la'
         alias nova='open -a Nova'
         alias code='open -a Visual\ Studio\ Code'
+        alias vi='nvim'
     ;;
     Linux)
         alias ll='ls -la --color'
         alias ls='ls --color'
+        alias vi='nvim'
     ;;
 esac
 
 # locale (need for mosh)
 export LANG=en_GB.UTF-8 LC_CTYPE=en_GB.UTF-8
 
-# homebrew
-export PATH=/opt/homebrew/bin:$PATH
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# PATH
+case `uname` in
+    Darwin)
+	export PATH=/opt/homebrew/bin:$PATH
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+
+	export PATH=$PATH:/Users/marcel/go/bin
+    ;;
+esac
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -47,4 +55,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 PS1='%n@%m %2d$ '
 
 # add ssh key
-ssh-add --apple-use-keychain
+case `uname` in
+    Darwin)
+	ssh-add --apple-use-keychain
+    ;;
+esac
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/marcel/Developer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/marcel/Developer/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/marcel/Developer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/marcel/Developer/google-cloud-sdk/completion.zsh.inc'; fi

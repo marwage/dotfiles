@@ -62,10 +62,11 @@ let g:ale_linters = {
 \ 'go': ['gopls'],
 \ 'python' :['flake8', 'mypy', 'pylint', 'pyright'],
 \}
+" \ 'go': ['gofmt', 'goimports', 'golines'],
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'python': ['isort', 'black'],
-\ 'go': ['gofmt', 'goimports', 'golines'],
+\ 'go': ['gofmt', 'goimports'],
 \ 'cpp': ['clang-format'],
 \ 'json': ['jq'],
 \ 'yaml': ['yamlfix'],
