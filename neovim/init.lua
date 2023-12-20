@@ -18,11 +18,12 @@ require("lazy").setup({
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
   "L3MON4D3/LuaSnip",
+  "numToStr/Comment.nvim",
 })
 
 -- COLOURSCHEME
 vim.cmd [[colorscheme sonokai]]
-vim.cmd [[hi Normal ctermbg=NONE]]       -- black background with sonokai
+vim.cmd [[hi Normal ctermbg=NONE]] -- black background with sonokai
 
 -- OPTIONS
 vim.opt.number = true
@@ -40,3 +41,6 @@ vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
 -- lSP
 require("lsp")
+
+-- COMMENT
+require('Comment').setup()
