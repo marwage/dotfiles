@@ -35,6 +35,7 @@ vim.opt.expandtab = true  -- Use the appropriate number of spaces to insert a <T
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while performing editing
+vim.opt.clipboard = "unnamedplus"
 
 -- FORMAT ON SAVE
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
