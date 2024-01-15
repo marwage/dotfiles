@@ -44,7 +44,12 @@ case `uname` in
 	export PATH=/opt/homebrew/bin:$PATH
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 
-	export PATH=$PATH:/Users/marcel/go/bin
+	export PATH=$PATH:/Users/$USER/go/bin
+    ;;
+    Linux)
+	export PATH=$PATH:/home/$USER/.local/bin
+	export PATH=$PATH:/home/$USER/go/bin
+	export PATH=$PATH:/usr/local/go/bin
     ;;
 esac
 
