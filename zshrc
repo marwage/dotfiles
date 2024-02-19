@@ -28,6 +28,7 @@ case `uname` in
     Darwin)
         alias ll='ls -lah'
         alias code='open -a Visual\ Studio\ Code'
+        alias excel='open -a Microsoft\ Excel'
     ;;
     Linux)
         alias ll='ls -la --color'
