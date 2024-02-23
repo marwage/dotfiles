@@ -21,17 +21,18 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # alias
+alias vi='nvim'
+alias tgz='tar -czvf'
+alias dtgz='tar -xvf'
 case `uname` in
     Darwin)
-        alias ll='ls -la'
-        alias nova='open -a Nova'
+        alias ll='ls -lah'
         alias code='open -a Visual\ Studio\ Code'
-        alias vi='nvim'
+        alias excel='open -a Microsoft\ Excel'
     ;;
     Linux)
         alias ll='ls -la --color'
         alias ls='ls --color'
-        alias vi='nvim'
     ;;
 esac
 
