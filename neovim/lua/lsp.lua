@@ -79,6 +79,16 @@ lspconfig.tsserver.setup {
   capabilities = capabilities,
 }
 
-lspconfig.gopls.setup{
+lspconfig.gopls.setup {
   capabilities = capabilities,
 }
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'sh',
+  callback = function()
+    vim.lsp.start({
+      name = 'bash-language-server',
+      cmd = { 'bash-language-server', 'start' },
+    })
+  end,
+})
