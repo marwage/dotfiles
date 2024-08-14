@@ -83,6 +83,10 @@ lspconfig.gopls.setup {
   capabilities = capabilities,
 }
 
+lspconfig.clangd.setup {
+  capabilities = capabilities,
+}
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'sh',
   callback = function()
