@@ -19,11 +19,12 @@ require("lazy").setup({
   "hrsh7th/cmp-nvim-lsp",
   "L3MON4D3/LuaSnip",
   "numToStr/Comment.nvim",
+  "github/copilot.vim",
 })
 
 -- COLOURSCHEME
+vim.g.sonokai_transparent_background = 1
 vim.cmd [[colorscheme sonokai]]
-vim.cmd [[hi Normal ctermbg=NONE]] -- black background with sonokai
 
 -- OPTIONS
 vim.opt.number = true
