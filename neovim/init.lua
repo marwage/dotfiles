@@ -19,6 +19,7 @@ require("lazy").setup({
   "hrsh7th/cmp-nvim-lsp",
   "L3MON4D3/LuaSnip",
   "numToStr/Comment.nvim",
+  "github/copilot.vim",
 })
 
 -- COLOURSCHEME
