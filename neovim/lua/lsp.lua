@@ -87,6 +87,12 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
+lspconfig.rust_analyzer.setup({
+    on_attach = function(client, bufnr)
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end
+})
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'sh',
   callback = function()
