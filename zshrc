@@ -29,6 +29,7 @@ case `uname` in
         alias ll='ls -lah'
         alias code='open -a Visual\ Studio\ Code'
         alias excel='open -a Microsoft\ Excel'
+        alias cursor='open -a Cursor'
     ;;
     Linux)
         alias ll='ls -la --color'
