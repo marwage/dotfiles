@@ -23,7 +23,8 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 # alias
 alias vi='nvim'
 alias tgz='tar -czvf'
-alias dtgz='tar -xvf'
+alias utgz='tar -xvf'
+alias goi='GOBIN=$(pwd)/bin go install -v ./...'
 case `uname` in
     Darwin)
         alias ll='ls -lah'
@@ -51,6 +52,7 @@ case `uname` in
 	export PATH=$PATH:/home/$USER/.local/bin
 	export PATH=$PATH:/home/$USER/go/bin
 	export PATH=$PATH:/usr/local/go/bin
+	export PATH=$PATH:/usr/local/cuda/bin
     ;;
 esac
 
@@ -88,4 +90,9 @@ export NVM_DIR="$HOME/.nvm"
 # Rust
 if [[ -f "$HOME/.cargo/env" ]]; then
     . "$HOME/.cargo/env"
+fi
+
+# Latex
+if [[ -d "/usr/local/texlive/2024/bin/x86_64-linux" ]]; then
+    export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
 fi
