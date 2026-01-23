@@ -1,5 +1,5 @@
 {
-  description = "My portable dev environment";
+  description = "Marcel's dev environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -29,6 +29,8 @@
               yq
               git-lfs
               tldr
+              direnv
+              nix-direnv
 
               # Python
               python3
@@ -38,7 +40,8 @@
             ];
 
             shellHook = ''
-              echo "Dev environment loaded!"
+              export SHELL=${pkgs.zsh}/bin/zsh
+              echo "Nix dev environment loaded!"
             '';
           };
         });

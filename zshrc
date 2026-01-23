@@ -97,3 +97,12 @@ fi
 if [[ -d "/usr/local/texlive/2024/bin/x86_64-linux" ]]; then
     export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
 fi
+
+# Nix dev environment
+if [[ -f "$HOME/dotfiles/flake.nix" ]]; then
+    _nix_cache="$HOME/.cache/nix-dev-env"
+    if [[ ! -f "$_nix_cache" ]] || [[ "$HOME/dotfiles/flake.nix" -nt "$_nix_cache" ]]; then
+        nix print-dev-env "$HOME/dotfiles" 2>/dev/null | grep -v 'LINENO=' > "$_nix_cache"
+    fi
+    [[ -f "$_nix_cache" ]] && source "$_nix_cache"
+fi
