@@ -9,3 +9,8 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 ```bash
 ln -s ~/dotfiles/nix ~/.config/nix
 ```
+## Install nix packages
+```bash
+nix develop ~/dotfiles
+```
+
