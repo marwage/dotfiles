@@ -45,9 +45,8 @@ cmp.setup {
   },
 }
 
--- LSP
-local lspconfig = require("lspconfig")
-lspconfig.pylsp.setup {
+-- LSP (using vim.lsp.config API for Neovim 0.11+)
+vim.lsp.config.pylsp = {
   settings = {
     pylsp = {
       plugins = {
@@ -71,34 +70,38 @@ lspconfig.pylsp.setup {
   capabilities = capabilities,
 }
 
-lspconfig.lua_ls.setup {
+vim.lsp.config.lua_ls = {
   capabilities = capabilities,
 }
 
-lspconfig.tsserver.setup {
+vim.lsp.config.ts_ls = {
   capabilities = capabilities,
 }
 
-lspconfig.gopls.setup {
+vim.lsp.config.gopls = {
   capabilities = capabilities,
 }
 
-lspconfig.clangd.setup {
+vim.lsp.config.clangd = {
   capabilities = capabilities,
 }
 
-lspconfig.rust_analyzer.setup({
-    on_attach = function(client, bufnr)
-        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-    end
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'sh',
-  callback = function()
-    vim.lsp.start({
-      name = 'bash-language-server',
-      cmd = { 'bash-language-server', 'start' },
-    })
+vim.lsp.config.rust_analyzer = {
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
   end,
-})
+}
+
+vim.lsp.config.bashls = {
+  capabilities = capabilities,
+}
+
+-- Enable all configured LSP servers
+vim.lsp.enable('pylsp')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('gopls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('bashls')

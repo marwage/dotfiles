@@ -48,5 +48,5 @@ require("lsp")
 require('Comment').setup()
 
 -- KEYMAP
-vim.diagnostic.enable(0)
+vim.diagnostic.enable(true)
 vim.api.nvim_set_keymap("n", "<Leader>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", {})
