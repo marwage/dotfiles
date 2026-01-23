@@ -46,29 +46,9 @@ cmp.setup {
 }
 
 -- LSP (using vim.lsp.config API for Neovim 0.11+)
-vim.lsp.config.pylsp = {
-  settings = {
-    pylsp = {
-      plugins = {
-        -- formatter options
-        black = { enabled = true },
-        autopep8 = { enabled = false },
-        yapf = { enabled = false },
-        -- linter options
-        pylint = { enabled = true, executable = "pylint" },
-        pyflakes = { enabled = false },
-        pycodestyle = { enabled = false },
-        -- type checker
-        pylsp_mypy = { enabled = true },
-        -- auto-completion options
-        jedi_completion = { fuzzy = true },
-        -- import sorting
-        pyls_isort = { enabled = true },
-      },
-    },
-  },
+vim.lsp.config('ruff', {
   capabilities = capabilities,
-}
+})
 
 vim.lsp.config.lua_ls = {
   capabilities = capabilities,
@@ -98,7 +78,7 @@ vim.lsp.config.bashls = {
 }
 
 -- Enable all configured LSP servers
-vim.lsp.enable('pylsp')
+vim.lsp.enable('ruff')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('gopls')
