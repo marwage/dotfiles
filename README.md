@@ -1,6 +1,11 @@
 # Marcel's dotfiles
 
-## Link neovim
+## Symlinks
+### Neovim
 ```bash
-ln -s dotfiles/neovim ~/.config/nvim
+ln -s ~/dotfiles/nvim ~/.config/nvim
+```
+### Nix
+```bash
+ln -s ~/dotfiles/nix ~/.config/nix
 ```
