@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Read",
+      "Write"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push -f:*)"
+    ]
+  }
+}
