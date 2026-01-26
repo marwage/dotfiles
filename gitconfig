@@ -2,17 +2,32 @@
 [user]
     name = Marcel Wagenländer
     email = marcel.wagenlander19@imperial.ac.uk
+
 [core]
     precomposeUnicode = true
     editor = vim
+    pager = delta
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
 [push]
 	autoSetupRemote = true
+
 [pull]
-	rebase = false
+	rebase = true
+
 [credential]
 	helper = store
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
+[merge]
+    conflictStyle = zdiff3

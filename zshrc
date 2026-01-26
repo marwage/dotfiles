@@ -25,6 +25,7 @@ alias vi='nvim'
 alias tgz='tar -czvf'
 alias utgz='tar -xvf'
 alias goi='GOBIN=$(pwd)/bin go install -v ./...'
+alias ls='eza'
 case `uname` in
     Darwin)
         alias ll='ls -lah'
@@ -90,4 +91,12 @@ test -n "$NIX_GCROOT" || nix develop $HOME/dotfiles
 
 # Direnv
 command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
+# Zoxide
+command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
+# Pay respects
+command -v pay-respects &> /dev/null && eval "$(pay-respects zsh --alias)"
+# Starship
+command -v starship &> /dev/null && eval "$(starship init zsh)"
+# Zoxide
+command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
 

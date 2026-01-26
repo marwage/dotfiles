@@ -31,6 +31,15 @@
               tldr
               direnv
               nix-direnv
+              bat
+              delta
+              btop
+              procs
+              zoxide
+              duf
+              lazygit
+              starship
+              pay-respects
 
               # Python
               python3
