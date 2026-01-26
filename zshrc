@@ -106,3 +106,7 @@ if [[ -f "$HOME/dotfiles/flake.nix" ]]; then
     fi
     [[ -f "$_nix_cache" ]] && source "$_nix_cache"
 fi
+
+# Direnv
+eval "$(direnv hook zsh)"
+
