@@ -42,6 +42,7 @@
             shellHook = ''
               export SHELL=${pkgs.zsh}/bin/zsh
               echo "Nix dev environment loaded!"
+              exec zsh
             '';
           };
         });

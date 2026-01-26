@@ -70,20 +70,7 @@ case `uname` in
     ;;
 esac
 
-# PATH
-case `uname` in
-    Darwin)
-        # The next line updates PATH for the Google Cloud SDK.
-        if [ -f '/Users/marcel/Developer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/marcel/Developer/google-cloud-sdk/path.zsh.inc'; fi
-
-        # The next line enables shell command completion for gcloud.
-        if [ -f '/Users/marcel/Developer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/marcel/Developer/google-cloud-sdk/completion.zsh.inc'; fi
-    ;;
-    Linux)
-        # empty for now
-    ;;
-esac
-
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -98,15 +85,9 @@ if [[ -d "/usr/local/texlive/2024/bin/x86_64-linux" ]]; then
     export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
 fi
 
-# Nix dev environment
-if [[ -f "$HOME/dotfiles/flake.nix" ]]; then
-    _nix_cache="$HOME/.cache/nix-dev-env"
-    if [[ ! -f "$_nix_cache" ]] || [[ "$HOME/dotfiles/flake.nix" -nt "$_nix_cache" ]]; then
-        nix print-dev-env "$HOME/dotfiles" 2>/dev/null | grep -v 'LINENO=' > "$_nix_cache"
-    fi
-    [[ -f "$_nix_cache" ]] && source "$_nix_cache"
-fi
+# Nix
+test -n "$NIX_GCROOT" || nix develop $HOME/dotfiles
 
 # Direnv
-eval "$(direnv hook zsh)"
+command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
 
