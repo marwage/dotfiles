@@ -88,7 +88,11 @@ if [[ -d "/usr/local/texlive/2024/bin/x86_64-linux" ]]; then
 fi
 
 # Nix
-test -n "$NIX_GCROOT" || nix develop $HOME/dotfiles -c zsh
+case `uname` in
+    Linux)
+        test -n "$NIX_GCROOT" || nix develop $HOME/dotfiles -c zsh
+    ;;
+esac
 
 # Direnv
 command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
