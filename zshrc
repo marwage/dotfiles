@@ -88,7 +88,7 @@ if [[ -d "/usr/local/texlive/2024/bin/x86_64-linux" ]]; then
 fi
 
 # Nix
-test -n "$NIX_GCROOT" || nix develop $HOME/dotfiles
+test -n "$NIX_GCROOT" || nix develop $HOME/dotfiles -c zsh
 
 # Direnv
 command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
@@ -100,4 +100,3 @@ command -v pay-respects &> /dev/null && eval "$(pay-respects zsh --alias)"
 command -v starship &> /dev/null && eval "$(starship init zsh)"
 # Zoxide
 command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
-
