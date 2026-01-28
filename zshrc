@@ -26,16 +26,17 @@ alias tgz='tar -czvf'
 alias utgz='tar -xvf'
 alias goi='GOBIN=$(pwd)/bin go install -v ./...'
 alias ls='eza'
+alias ll='eza -la'
 case `uname` in
     Darwin)
-        alias ll='ls -lah'
+        # alias ll='ls -lah'
         alias code='open -a Visual\ Studio\ Code'
         alias excel='open -a Microsoft\ Excel'
         alias cursor='open -a Cursor'
     ;;
     Linux)
-        alias ll='ls -la --color'
-        alias ls='ls --color'
+        # alias ll='ls -la --color'
+        # alias ls='ls --color'
     ;;
 esac
 
