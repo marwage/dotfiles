@@ -49,6 +49,9 @@
             uv
             ruff
             ty
+
+            # --- AI ---
+            claude-code
           ];
 
           shellHook = ''
