@@ -52,6 +52,8 @@
 
             # --- AI ---
             claude-code
+            gemini-cli
+            opencode
           ];
 
           shellHook = ''
