@@ -102,5 +102,3 @@ command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
 command -v pay-respects &> /dev/null && eval "$(pay-respects zsh --alias)"
 # Starship
 command -v starship &> /dev/null && eval "$(starship init zsh)"
-# Zoxide
-command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
