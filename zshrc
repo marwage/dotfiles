@@ -102,3 +102,15 @@ command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
 command -v pay-respects &> /dev/null && eval "$(pay-respects zsh --alias)"
 # Starship
 command -v starship &> /dev/null && eval "$(starship init zsh)"
+
+
+# Git worktree add
+gwa() {
+  # 1. Get the basename of the repository root
+  local repo_name=$(basename "$(git rev-parse --show-toplevel)")
+  local branch_name=$1
+  local target_path="../${repo_name}-${branch_name}"
+  local target_branch="mw/${branch_name}"
+
+  git worktree add -b "$target_branch" "$target_path"
+}
