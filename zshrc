@@ -28,7 +28,6 @@ alias goi='GOBIN=$(pwd)/bin go install -v ./...'
 alias ls='eza'
 alias ll='eza -la'
 alias tmw='tmux attach-session -t marcel || tmux new-session -s marcel'
-alias cd='z'
 case `uname` in
     Darwin)
         # alias ll='ls -lah'
