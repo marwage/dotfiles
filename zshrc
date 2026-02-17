@@ -22,6 +22,7 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 # alias
 alias vi='nvim'
+alias vim='nvim'
 alias tgz='tar -czvf'
 alias utgz='tar -xvf'
 alias goi='GOBIN=$(pwd)/bin go install -v ./...'
