@@ -53,7 +53,6 @@
             # --- AI ---
             claude-code
             opencode
-            cursor-cli
           ];
 
           shellHook = ''
