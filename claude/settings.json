@@ -8,7 +8,9 @@
     "deny": [
       "Bash(sudo:*)",
       "Bash(rm -rf:*)",
-      "Bash(git push -f:*)"
+      "Bash(rm -fr:*)",
+      "Bash(git push -f:*)",
+      "Bash(ssh:*)"
     ]
   }
 }
