@@ -37,6 +37,7 @@ vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while performing editing
 vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = "" -- No mouse support
 
 -- FORMAT ON SAVE
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
