@@ -12,5 +12,9 @@
       "Bash(git push -f:*)",
       "Bash(ssh:*)"
     ]
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   }
 }
