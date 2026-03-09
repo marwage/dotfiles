@@ -7,7 +7,9 @@
     "allow": [
       "Bash",
       "Read",
-      "Write"
+      "Write",
+      "WebFetch",
+      "WebSearch"
     ],
     "deny": [
       "Bash(sudo:*)",
