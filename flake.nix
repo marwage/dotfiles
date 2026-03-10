@@ -54,6 +54,11 @@
             # --- AI ---
             claude-code
             opencode
+
+            # --- GO ---
+            go
+            gopls
+            gotools
           ];
 
           shellHook = ''
