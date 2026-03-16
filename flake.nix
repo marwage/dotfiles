@@ -20,6 +20,7 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             nil
+            gh
             git
             neovim
             tmux
