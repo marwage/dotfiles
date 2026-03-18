@@ -1,3 +1,4 @@
 term = xterm-256color
 background = #000000
 font-family = "SF Mono"
+clipboard-trim-trailing-spaces = true
