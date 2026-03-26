@@ -118,3 +118,7 @@ gwa() {
 
   git worktree add -b "$target_branch" "$target_path" && cd "$target_path"
 }
+
+# Homebrew
+export HOMEBREW_AUTO_UPDATE_SECS=3600
+
