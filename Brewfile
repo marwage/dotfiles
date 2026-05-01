@@ -1,5 +1,3 @@
-tap "homebrew/services"
-
 brew "ffmpeg"
 brew "fzf"
 brew "git-delta"
