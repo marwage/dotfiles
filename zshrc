@@ -53,6 +53,9 @@ case `uname` in
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 
 	export PATH=$PATH:/Users/$USER/go/bin
+	export PATH=$PATH:/Users/$USER/.local/bin
+
+        alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
     ;;
     Linux)
 	export PATH=$PATH:/home/$USER/.local/bin
