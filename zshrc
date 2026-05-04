@@ -92,8 +92,8 @@ if [[ -f "$HOME/.cargo/env" ]]; then
 fi
 
 # Latex
-if [[ -d "/usr/local/texlive/2024/bin/x86_64-linux" ]]; then
-    export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
+if [[ -d "/usr/local/texlive/2026basic/bin/universal-darwin" ]]; then
+    export PATH=$PATH:/usr/local/texlive/2026basic/bin/universal-darwin
 fi
 
 # Nix
