@@ -3,9 +3,12 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    claude-code-nix.url = "github:sadjow/claude-code-nix";
+    claude-code-nix.inputs.flake-utils.follows = "flake-utils";
+    claude-code-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, claude-code-nix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
@@ -52,7 +55,7 @@
             ty
 
             # --- AI ---
-            claude-code
+            claude-code-nix.packages.${system}.default
             opencode
 
             # --- GO ---
