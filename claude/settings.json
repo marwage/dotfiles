@@ -20,4 +20,9 @@
     ]
   },
   "effortLevel": "xhigh"
+  "model": "opus[1m]",
+  "effortLevel": "xhigh",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  }
 }

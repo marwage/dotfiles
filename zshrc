@@ -90,6 +90,9 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -f "$HOME/.cargo/env" ]]; then
     . "$HOME/.cargo/env"
 fi
+if [[ -d "/opt/homebrew/opt/rustup/bin" ]]; then
+    export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+fi
 
 # Latex
 if [[ -d "/usr/local/texlive/2026basic/bin/universal-darwin" ]]; then
