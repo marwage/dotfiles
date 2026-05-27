@@ -19,7 +19,6 @@
       "Bash(ssh:*)"
     ]
   },
-  "effortLevel": "xhigh"
   "model": "opus[1m]",
   "effortLevel": "xhigh",
   "enabledPlugins": {
