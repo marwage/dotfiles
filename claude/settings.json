@@ -19,9 +19,9 @@
       "Bash(ssh:*)"
     ]
   },
-  "model": "opus[1m]",
-  "effortLevel": "xhigh",
+  "model": "opus",
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true
-  }
+  },
+  "effortLevel": "xhigh"
 }
