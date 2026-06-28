@@ -62,6 +62,13 @@
             go
             gopls
             gotools
+
+            # --- Rust ---
+            rustc
+            cargo
+            rust-analyzer
+            clippy
+            rustfmt
           ];
 
           shellHook = ''
