@@ -25,5 +25,7 @@
   },
   "effortLevel": "xhigh",
   "tui": "fullscreen",
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
