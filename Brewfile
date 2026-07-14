@@ -25,5 +25,6 @@ brew "lua-language-server"
 brew "typescript-language-server"
 brew "gopls"
 brew "bash-language-server"
+brew "tree-sitter-cli"
 
 cask "claude-code"

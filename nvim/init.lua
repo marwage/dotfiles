@@ -21,9 +21,9 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
-  "L3MON4D3/LuaSnip",
-  "numToStr/Comment.nvim",
-  "github/copilot.vim",
+  { "nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate" },
+  "ibhagwan/fzf-lua",
+  "lewis6991/gitsigns.nvim",
 })
 
 -- COLOURSCHEME
@@ -55,8 +55,23 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- lSP
 require("lsp")
 
--- COMMENT
-require('Comment').setup()
+-- TREESITTER
+require("nvim-treesitter").install({
+  "bash", "c", "cpp", "go", "javascript", "json", "lua", "markdown",
+  "markdown_inline", "nix", "python", "rust", "toml", "typescript", "yaml",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
+
+-- GITSIGNS
+require("gitsigns").setup()
 
 -- KEYMAP
 vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float)
+local fzf = require("fzf-lua")
+vim.keymap.set("n", "<Leader>f", fzf.files)
+vim.keymap.set("n", "<Leader>g", fzf.live_grep)
+vim.keymap.set("n", "<Leader>b", fzf.buffers)

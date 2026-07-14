@@ -52,6 +52,7 @@
             lua-language-server
             typescript-language-server
             bash-language-server
+            tree-sitter
 
             # --- Python ---
             python3
