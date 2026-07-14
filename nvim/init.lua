@@ -1,6 +1,10 @@
+-- LEADER (must be set before plugins load)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- LAZY PACKAGE MANAGER
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -40,7 +44,13 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "" -- No mouse support
 
 -- FORMAT ON SAVE
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function(args)
+    if #vim.lsp.get_clients({ bufnr = args.buf, method = "textDocument/formatting" }) > 0 then
+      vim.lsp.buf.format({ bufnr = args.buf })
+    end
+  end,
+})
 
 -- lSP
 require("lsp")
@@ -49,5 +59,4 @@ require("lsp")
 require('Comment').setup()
 
 -- KEYMAP
-vim.diagnostic.enable(true)
-vim.api.nvim_set_keymap("n", "<Leader>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", {})
+vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float)

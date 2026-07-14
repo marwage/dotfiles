@@ -48,6 +48,11 @@
             starship
             pay-respects
 
+            # --- LSP ---
+            lua-language-server
+            typescript-language-server
+            bash-language-server
+
             # --- Python ---
             python3
             uv
