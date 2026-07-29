@@ -41,6 +41,16 @@ vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4 -- Number of spaces that a <Tab> counts for while performing editing
 vim.opt.clipboard = "unnamedplus"
+-- On a headless remote (no local clipboard tool), copy via OSC 52 escape
+-- sequences, which tmux and mosh forward to the local terminal.
+if vim.fn.has("linux") == 1 and not vim.env.DISPLAY and not vim.env.WAYLAND_DISPLAY then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    paste = { ["+"] = osc52.paste("+"), ["*"] = osc52.paste("*") },
+  }
+end
 vim.opt.mouse = "" -- No mouse support
 
 -- FORMAT ON SAVE
