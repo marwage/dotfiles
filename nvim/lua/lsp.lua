@@ -43,9 +43,18 @@ cmp.setup {
 }
 
 -- LSP (using vim.lsp.config API for Neovim 0.11+)
+-- Python: ruff for lint/format, ty for types/completion.
+-- Silence ruff's hover (noqa codes only) so ty's type hover wins.
 vim.lsp.config('ruff', {
   capabilities = capabilities,
+  on_attach = function(client, _)
+    client.server_capabilities.hoverProvider = false
+  end,
 })
+
+vim.lsp.config.ty = {
+  capabilities = capabilities,
+}
 
 vim.lsp.config.lua_ls = {
   capabilities = capabilities,
@@ -76,6 +85,7 @@ vim.lsp.config.bashls = {
 
 -- Enable all configured LSP servers
 vim.lsp.enable('ruff')
+vim.lsp.enable('ty')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('gopls')
