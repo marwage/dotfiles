@@ -100,10 +100,15 @@ if [[ -d "/usr/local/texlive/2026basic/bin/universal-darwin" ]]; then
 fi
 
 # Nix
-if [ -z "$IN_DOTFILES_SHELL" ] && command -v nix >/dev/null 2>&1; then
-    export IN_DOTFILES_SHELL=1
-    exec nix develop "$HOME/dotfiles" -c zsh
-fi
+case "$(uname)" in
+    Linux)
+        if [ -z "$IN_DOTFILES_SHELL" ] && command -v nix >/dev/null 2>&1; then
+            export IN_DOTFILES_SHELL=1
+            nix develop "$HOME/dotfiles" -c zsh && exit
+            unset IN_DOTFILES_SHELL
+        fi
+    ;;
+esac
 
 # Direnv
 command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
