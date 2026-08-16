@@ -19,7 +19,7 @@
       "Bash(git push -f:*)",
       "Bash(ssh:*)"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "auto"
   },
   "model": "claude-fable-5[1m]",
   "enabledPlugins": {
