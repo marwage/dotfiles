@@ -40,7 +40,6 @@
             nix-direnv
             bat
             delta
-            btop
             procs
             zoxide
             duf
