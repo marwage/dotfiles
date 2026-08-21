@@ -17,6 +17,10 @@ ln -s ~/dotfiles/ghostty/config ~/.config/ghostty/config
 ```bash
 ln -s ~/dotfiles/nix ~/.config/nix
 ```
+### Spotify Player
+```bash
+ln -s ~/dotfiles/spotify-player/app.toml ~/.config/spotify-player/app.toml
+```
 ## Install nix packages
 ```bash
 nix develop ~/dotfiles
