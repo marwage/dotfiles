@@ -38,9 +38,9 @@ playlist_desc = { fg = "#996600" }
 [[themes]]
 name = "Apple Music"
 [themes.palette]
-background = "#1a1a1a"
+background = "#000000"
 foreground = "#ffffff"
-black = "#1a1a1a"
+black = "#000000"
 red = "#fc3c44"
 green = "#32d74b"
 yellow = "#ffd60a"
