@@ -102,6 +102,9 @@ fi
 # Nix
 case "$(uname)" in
     Linux)
+	if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+	  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+	fi
         if [ -z "$IN_DOTFILES_SHELL" ] && command -v nix >/dev/null 2>&1; then
             export IN_DOTFILES_SHELL=1
             nix develop "$HOME/dotfiles" -c zsh && exit
