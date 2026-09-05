@@ -53,8 +53,7 @@
             bash-language-server
             tree-sitter
 
-            # --- Python ---
-            python3
+            # --- Python (no nix python3: its loader can't see /usr/lib, e.g. libcuda) ---
             uv
             ruff
             ty
@@ -75,6 +74,9 @@
             clippy
             rustfmt
           ];
+
+          # uv-managed CPython only (system loader, sees /usr/lib).
+          UV_PYTHON_PREFERENCE = "only-managed";
 
           shellHook = ''
             # 1. Setup Dynamic Linker paths (Critical for Python libraries like NumPy/Pandas)
