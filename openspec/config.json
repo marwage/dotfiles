@@ -2,6 +2,7 @@
   "telemetry": {
     "noticeSeen": true,
     "enable": false,
+    "anonymousId": "3dcc0f56-1350-4b38-bbc6-6230bbcb02af"
   },
   "completionTipSeen": true
 }
