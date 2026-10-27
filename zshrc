@@ -135,3 +135,9 @@ gwa() {
 # Homebrew
 export HOMEBREW_AUTO_UPDATE_SECS=3600
 
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=('/Users/marcel/.zsh/completions' $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
